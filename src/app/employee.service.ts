@@ -1,20 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, Observable, throwError } from 'rxjs';
+import { IEmployee } from './IEmployee';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor() { }
-  employees=[
-    {"id":1 , "name":"Ahmed Mohamed"},
-    {"id":2,"name":"Hany Ahmed"},
-    {"id":3 ,"name":"Sara Mostafa"},
-    {"id":4,"name":"Salama Mohamed"}
-  ]
+  constructor(private http:HttpClient) { }
+  employees=[];
 
-  getEmployees()
+  url:string="/assets/Data/employes.json";
+
+  getEmployees():Observable<IEmployee[]>
   {
-   return this.employees;
+   //return this.employees;
+   return this.http.get<IEmployee[]>(this.url).pipe(catchError((err)=>{
+    return throwError(()=>err.message||"Internal server")
+   }));
   }
 }
