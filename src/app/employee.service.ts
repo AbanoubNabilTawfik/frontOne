@@ -11,7 +11,7 @@ export class EmployeeService {
   constructor(private http:HttpClient) { }
   employees=[];
 
-  url:string="/assets/Data/employes.json";
+  url:string="/assets/Data/employees.json";
 
   getEmployees():Observable<IEmployee[]>
   {

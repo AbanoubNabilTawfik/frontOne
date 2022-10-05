@@ -23,6 +23,12 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import {HttpClientModule} from '@angular/common/http';
+import { DepartmentsComponent } from './departments/departments.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DepartmentDetailsComponent } from './department-details/department-details.component';
+import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
+import { DepartmentContactInfoComponent } from './department-contact-info/department-contact-info.component';
+import { TdfComponent } from './tdf/tdf.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,13 @@ import {HttpClientModule} from '@angular/common/http';
     EmployeeListComponent,
     EmployeeDetailsComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    DepartmentsComponent,
+    PageNotFoundComponent,
+    DepartmentDetailsComponent,
+    DepartmentOverviewComponent,
+    DepartmentContactInfoComponent,
+    TdfComponent
   ],
   imports: [
     BrowserModule,
